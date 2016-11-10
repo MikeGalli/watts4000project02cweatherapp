@@ -1,1 +1,9 @@
 <p>This is the about view.</p>
+<div ng-controller="AboutCtrl">
+  <h1>Weather for </h1>
+  <div ng-repeat="photo in pics.photos.photo">
+<!--              Header?  var
+-->
+    <img ng-src={{photo.url_l}}>
+
+  </div>

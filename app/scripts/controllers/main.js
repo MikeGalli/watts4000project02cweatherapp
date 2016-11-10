@@ -7,11 +7,14 @@
  * # MainCtrl
  * Controller of the watts4000project02cweatherappApp
  */
+
 angular.module('watts4000project02cweatherappApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope, current) {
+    $scope.current = current.query();
+
+    $scope.refreshCurrent = function(){
+        $scope.current = current.query({
+            location: $scope.location
+        });
+    };
   });
