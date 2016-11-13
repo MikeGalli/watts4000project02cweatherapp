@@ -9,12 +9,15 @@
  */
 
 angular.module('watts4000project02cweatherappApp')
-  .controller('MainCtrl', function ($scope, current) {
-    $scope.current = current.query();
+.controller('MainCtrl', function ($scope, citysearch, $localStorage) {
+  $scope.citiesFound = citysearch.find();
+  $scope.storage = $localStorage;
 
-    $scope.refreshCurrent = function(){
-        $scope.current = current.query({
-            location: $scope.location
-        });
-    };
-  });
+  $scope.findCities = function(){
+      $scope.citiesFound = citysearch.find({
+          query: $scope.location
+      });
+      $scope.searchQuery = $scope.location;
+  };
+
+});
