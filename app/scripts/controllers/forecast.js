@@ -18,7 +18,7 @@ angular.module('watts4000project02cweatherappApp')
       });
 
 
-      ////////////////////////////////////////////
+    /*  ////////////////////////////////////////////
       $scope.forecast.$promise.then ();
       $scope.pics = pics.query();
 
@@ -30,6 +30,6 @@ angular.module('watts4000project02cweatherappApp')
           });
       };
 
-      /////////////////////////////////////////////
+    */  /////////////////////////////////////////////
 
     });
