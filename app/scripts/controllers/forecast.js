@@ -17,6 +17,7 @@ angular.module('watts4000project02cweatherappApp')
           lon: $scope.lon
       });
 
+
       ////////////////////////////////////////////
       $scope.forecast.$promise.then ();
       $scope.pics = pics.query();
