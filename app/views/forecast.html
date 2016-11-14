@@ -14,7 +14,7 @@
 
   <div ng-controller="ForecastCtrl">
     <h1>Weather for {{forecastData.city.name}}</h1>
-    <div class="weather-days col-xs-12 col-md-2" ng-repeat="photo in pics.photos.photo">
+    <div class="photos" ng-repeat="photo in pics.photos.photo">
   <!--              Header?  var
   -->
       <img ng-src={{photo.url_l}}>
