@@ -13,7 +13,7 @@
      // ...
 
      // Public API here
-     return $resource('https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=35edbca3494716bac72f7f2719ccb167&tags=:tags%2CClear&tag_mode=any&text=skyline&sort=relevance&lat=:lat&lon=:lon&radius=2&extras=url_l&format=json&nojsoncallback=1', {}, {
+     return $resource('https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=35edbca3494716bac72f7f2719ccb167&tags=:tags&tag_mode=any&text=skyline&sort=relevance&lat=:lat&lon=:lon&radius=2&extras=url_l&format=json&nojsoncallback=1', {}, {
        query: {
          method:'GET',
          params:{

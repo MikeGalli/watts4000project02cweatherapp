@@ -19,7 +19,9 @@ angular.module('watts4000project02cweatherappApp')
     $scope.saveCity = function(city){
         var cityData = {
             'name': city.name,
-            'id': city.id
+            'id': city.id,
+            'lat': city.lat,
+            'lon': city.lon
         };
         if (!$localStorage.savedCities){
             $localStorage.savedCities = [cityData];

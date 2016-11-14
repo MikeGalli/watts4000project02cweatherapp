@@ -11,25 +11,21 @@ angular.module('watts4000project02cweatherappApp')
     .controller('ForecastCtrl', function ($scope, $routeParams, forecast, pics) {
       $scope.cityID = $routeParams.cityID;
 
-      $scope.forecastData = forecast.query({
-          cityID: $routeParams.cityID,
-          lat: $scope.lat,
-          lon: $scope.lon
-      });
+    //  $scope.forecastData = forecast.query({
+        $scope.forecastData = forecast.query({
+            cityID: $scope.cityID
+        });
 
 
-    /*  ////////////////////////////////////////////
-      $scope.forecast.$promise.then ();
-      $scope.pics = pics.query();
-
-      $scope.refreshPhotos = function(){
+      ////////////////////////////////////////////
+      $scope.forecastData.$promise.then(function(data){
           $scope.pics = pics.query({
-              title: $scope.title,
-              lat: $scope.lat,
-              lon: $scope.lon
+              lat: data.coord.lat, // Note: this reference to data.lat is probably wrong and should refer to the lat value in the forecast data object.
+              lon: data.coord.lon, // Note: see note above re: path to this data in the forecastData results
+              tags: data.weather[0].description // Note: This will also need to be pathed correctly in the forecastData
           });
-      };
+      });
+      /////////////////////////////////////////////
 
-    */  /////////////////////////////////////////////
-
+  //  });
     });
